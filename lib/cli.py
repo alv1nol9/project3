@@ -1,7 +1,6 @@
 import click
-from datetime import datetime
-from db.database import engine, SessionLocal
-from models import Base, Car, Customer, Rental
+from lib.db.database import engine, SessionLocal
+from lib.models import Base, Car, Customer, Rental
 
 # Initialize database schema
 @click.group()
