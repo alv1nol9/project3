@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean
 from . import Base
 
+
 class Car(Base):
     __tablename__ = "cars"
 
@@ -11,3 +12,5 @@ class Car(Base):
     available = Column(Boolean, default=True, nullable=False)
 
     rentals = []
+    from sqlalchemy.orm import relationship
+    rentals = relationship("Rental", back_populates="car")

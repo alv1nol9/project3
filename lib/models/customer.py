@@ -8,3 +8,5 @@ class Customer(Base):
     name = Column(String, unique=True, nullable=False)
 
     rentals = [] 
+    from sqlalchemy.orm import relationship
+    rentals = relationship("Rental", back_populates="customer")
